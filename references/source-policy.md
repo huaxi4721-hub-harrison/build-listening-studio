@@ -39,3 +39,10 @@ Do not assume every item from one publisher has identical rights. VOA-produced l
 for example, may differ from syndicated Associated Press, Reuters, or other third-party material.
 NASA and other government sources can also contain third-party images, music, or guest material.
 Screen the item, not only the domain.
+
+## Bundled snapshots
+
+A verified static catalog protects availability; it does not make rights review permanent. Record
+the verification date, keep official source links, and re-screen items before a major public
+release. Live server-side failure is an availability signal, not permission to bypass access
+controls or substitute an unverified mirror.

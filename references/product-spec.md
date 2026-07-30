@@ -16,6 +16,8 @@
 - Prefer lessons of three minutes or less.
 - Display title, provider, collection, level, accent, duration, publication date, and source link.
 - Refresh current feeds on the server or at a bounded interval; keep a reliable fallback lesson.
+- For a shared starter, ship a screened multi-lesson baseline rather than one fallback demo. Merge
+  verified live results over it without deleting the baseline during source outages.
 - Import only audio with a matching transcript and a documented reuse basis.
 - Keep an excerpt and its transcript coherent. Do not cut in the middle of an idea.
 

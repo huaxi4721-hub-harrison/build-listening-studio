@@ -28,6 +28,18 @@ type Lesson = {
 
 Treat `duration` as the study boundary and `originalDuration` as source context.
 
+## Resilient remote library
+
+Serverless hosts and publishers can behave differently from a local browser. Keep a verified
+static baseline and merge current remote lessons over it by stable ID. Apply candidate limits
+after checking the source page, audio URL, transcript, duration, and third-party attribution.
+
+When feeds contain duplicate titles, group all article candidates under the normalized title.
+Prefer a descriptive slugged article page over a numeric audio-only page. Fetch only a bounded
+number of candidates, but do not let one invalid early item suppress later valid lessons.
+
+See `library-refresh.md` and the reusable files under `assets/library/`.
+
 ## Audio state
 
 Use one media element across the learning stages. Keep:

@@ -16,6 +16,8 @@ unless the user explicitly requests accounts or shared persistence.
   microphone, scoring, storage, or transcript work.
 - Read [references/source-policy.md](references/source-policy.md) before adding or refreshing
   lesson sources.
+- Read [references/library-refresh.md](references/library-refresh.md) when the lesson library is
+  missing, too small, or unreliable in production.
 - Reuse [assets/shadow-sync.ts](assets/shadow-sync.ts) when the project needs untimed transcript
   cues.
 
@@ -43,6 +45,18 @@ unless the user explicitly requests accounts or shared persistence.
    for multi-user persistence.
 8. Validate the interaction invariants, build the production output, and publish through the
    project's established host.
+
+## Start with a resilient multi-lesson library
+
+For a Next.js or Vinext project that has no usable library, copy
+`assets/library/route.ts` and `assets/library/static-episodes.ts` together into
+`app/api/library/`. The bundle contains 15 verified VOA lessons across six collections and live
+VOA/NASA refresh adapters; it produced 21 complete lessons at its 2026-07-30 verification.
+
+Treat the bundled catalog as a working baseline, not permanently current source evidence. Follow
+`references/library-refresh.md` to re-screen sources, merge live results over the baseline, and
+test the deployed API. Never let a remote source failure collapse a shared site back to one demo
+lesson.
 
 ## Protect the learning method
 
@@ -85,6 +99,7 @@ Optionally run:
 
 ```bash
 node scripts/validate-listening-studio.mjs /path/to/project
+node scripts/validate-bundled-library.mjs
 ```
 
 Treat its result as a fast structural check, not a substitute for runtime tests.
