@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Listening Studio"
+  short_description: "Build interactive English listening practice sites"
+  default_prompt: "Use $build-listening-studio to build or upgrade an English listening practice website with audio-synced shadowing."
